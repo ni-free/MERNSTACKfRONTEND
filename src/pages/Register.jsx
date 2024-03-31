@@ -13,22 +13,30 @@ const Register = () => {
     const submit = async (e) => {
         e.preventDefault()
         console.log(form)
-        axios.post("https://mernstackbackend-lise.onrender.com/api/v1/users/register", form).then((res) => {
-            if(res.data.message==="User with username or email exist")
-           alert(res.data.message)
-        else {
-            alert(res.data.message)
-                 
-        console.log(res)
-        setForm({ fullname: '', email: "", username: '', password: "" })
-        history('/login')
-        }
-       
-        })
+    
+            
+           await   axios.post("https://mernstackbackend-1.onrender.com/api/v1/users/register", form).then((res) => {
+
+           console.log(res);
+            //   if(res.data.statusCode===409)
+                
+            //    alert("email or username already exist")
+            // else {
+            //     alert(res.data.message)
+                     
+            console.log(res)
+            setForm({ fullname: '', email: "", username: '', password: "" })
+            history('/login')
+            
+           
+            }).catch((error) => {
+                if(error.message==="Request failed with status code 409")
+                alert("email or username already exist"); //Logs a string: Error: Request failed with status code 404
+              });
+    } 
 
 
-
-    }
+    
 
     return (
         <section className='relative flex lg:flex-row flex-col max-container'>
@@ -47,7 +55,7 @@ const Register = () => {
                             className='input'
                             placeholder='xyz'
                             required
-                            value={form.name}
+                            value={form.fullname}
                             onChange={handleChange}
 
                         />

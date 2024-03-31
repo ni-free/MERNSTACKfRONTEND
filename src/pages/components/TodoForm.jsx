@@ -7,18 +7,8 @@ function TodoForm() {
     const {addTodo} =  useTodo()
 
     const add = async (e) => {
-        
-      e.preventDefault()
-   
-      if (!todo) return
-      await axios.post("https://mernstackbackend-lise.onrender.com/api/v1/todo/add",{title:todo,userid:usid}).then((res)=>{
-        console.log(res)
-    
-    }
-
-    )
-      
-      addTodo({ todo, completed: false})
+        e.preventDefault()
+         addTodo({ todo, completed: false})
       setTodo("")
     }
 
@@ -31,7 +21,7 @@ function TodoForm() {
               value={todo}
               onChange={(e) => setTodo(e.target.value)}
           />
-          <button type="submit" className="rounded-r-lg px-3 py-1 bg-green-600 text-white shrink-0">
+          <button type="submit" className="rounded-r-lg px-3 py-1 bg-green-600 text-white shrink-0" onClick={add}>
               Add
           </button>
       </form>
