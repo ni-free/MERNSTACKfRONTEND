@@ -7,7 +7,7 @@ const Home = () => {
     <h2 className='sm:text-5xl text-2xl font-semibold sm:leading-snug font-poppins text-left'>Become your most <br /> productive self with <br /> TODO</h2>
      <h3 className='mt-4 mb-4 text-white-300 font-semibold text-left'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam labore ducimus dolorem adipisci obcaecati id tenetur ut non quos magnam.</h3>
      
-     <button className='btn '><a href='/Login'>Lets Start</a></button>
+     <button className='btn '><a href='/login'>Lets Start</a></button>
   </div>
   <div className='h-[50vh] w-[220px]   mt-44 mr-32 mb-20 ml-20'>
     <img src={todo} alt="bg" />
