@@ -20,7 +20,7 @@ const Login = () => {
             if(res.data.message==="User doesnot exist please register first"){
            alert(res.data.message)
            setForm({ fullname: '', email: "", username: '', password: "" })
-        history('/register')
+        history('/register1')
             }
         else if(res.data.message==="User Logged in Successfully") {
             alert(res.data.message)
