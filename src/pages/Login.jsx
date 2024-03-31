@@ -43,7 +43,7 @@ const Login = () => {
 
     }
 const toregister=(e)=>{
-    history('/register')
+    history('/register1')
 }
        
   return (
