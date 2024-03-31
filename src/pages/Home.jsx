@@ -3,7 +3,8 @@ import { todo } from '../images/index.js'
 import { useNavigate } from 'react-router-dom'
 const Home = () => {
   const history =useNavigate()
-  const change=()=>{
+  const change=(e)=>{
+       e.preventDefault()
        history('/login')
   }
   return (
