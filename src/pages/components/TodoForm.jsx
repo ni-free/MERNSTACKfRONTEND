@@ -11,7 +11,7 @@ function TodoForm() {
       e.preventDefault()
    
       if (!todo) return
-      await axios.post("http://localhost:3000/api/v1/todo/add",{title:todo,userid:usid}).then((res)=>{
+      await axios.post("https://mernstackbackend-lise.onrender.com/api/v1/todo/add",{title:todo,userid:usid}).then((res)=>{
         console.log(res)
     
     }

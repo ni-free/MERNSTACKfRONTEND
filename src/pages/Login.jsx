@@ -16,7 +16,7 @@ const Login = () => {
        const submit = async (e) => {
         e.preventDefault()
         console.log(form)
-       await axios.post("http://localhost:3000/api/v1/users/login", form).then((res) => {
+       await axios.post("https://mernstackbackend-lise.onrender.com/api/v1/users/login", form).then((res) => {
             if(res.data.message==="User doesnot exist please register first"){
            alert(res.data.message)
            setForm({ fullname: '', email: "", username: '', password: "" })

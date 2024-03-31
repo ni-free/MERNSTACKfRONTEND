@@ -13,7 +13,7 @@ const Register = () => {
     const submit = async (e) => {
         e.preventDefault()
         console.log(form)
-        axios.post("http://localhost:3000/api/v1/users/register", form).then((res) => {
+        axios.post("https://mernstackbackend-lise.onrender.com/api/v1/users/register", form).then((res) => {
             if(res.data.message==="User with username or email exist")
            alert(res.data.message)
         else {
